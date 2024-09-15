@@ -10,6 +10,11 @@ const app = express();  // Initialize Express
 app.use(cors());  // Use CORS middleware
 app.use(bodyParser.json());  // Use Body-Parser middleware
 
+// Health check endpoint for load balancer
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Use the routes for clients and pets
 app.use('/clients', clientRoutes);
 app.use('/pets', petRoutes);
