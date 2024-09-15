@@ -1,9 +1,12 @@
 const express = require('express');
-const { addPet, upload } = require('../controllers/petController');
-
 const router = express.Router();
+const petController = require('../controllers/petController');  // Import the pet controller
 
-// Use multer middleware to handle file uploads
-router.post('/add', upload.array('documents'), addPet);
+// Middleware to handle file uploads
+const upload = petController.upload;
+
+// Define routes for pets
+router.post('/', upload.array('documents', 10), petController.addPet);  // Route to add a pet with file upload
 
 module.exports = router;
+

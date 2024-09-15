@@ -62,4 +62,3 @@ const addPet = async (req, res) => {
 };
 
 module.exports = { addPet, upload };
-

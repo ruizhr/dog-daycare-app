@@ -1,8 +1,10 @@
 const express = require('express');
-const { addClient } = require('../controllers/clientController');
-
 const router = express.Router();
+const clientController = require('../controllers/clientController');  // Import the client controller
 
-router.post('/add', addClient);
+// Define routes for clients
+router.post('/', clientController.addClient);  // Route to add a client
 
 module.exports = router;
+
+
