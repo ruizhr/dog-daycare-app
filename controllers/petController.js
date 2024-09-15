@@ -61,4 +61,19 @@ const addPet = async (req, res) => {
   }
 };
 
-module.exports = { addPet, upload };
+// Function to get all pets
+const getAllPets = async (req, res) => {
+  const params = {
+    TableName: 'Pets'
+  };
+
+  try {
+    const data = await dynamodb.scan(params).promise();
+    res.status(200).json(data.Items);  // Return all pets
+  } catch (error) {
+    res.status(500).json({ error: 'Could not retrieve pets', details: error.message });
+  }
+};
+
+module.exports = { addPet, getAllPets, upload };
+

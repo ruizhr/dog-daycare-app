@@ -27,4 +27,19 @@ const addClient = async (req, res) => {
   }
 };
 
-module.exports = { addClient };
+// Function to get all clients
+const getAllClients = async (req, res) => {
+  const params = {
+    TableName: 'Clients'
+  };
+
+  try {
+    const data = await dynamodb.scan(params).promise();
+    res.status(200).json(data.Items);  // Return all clients
+  } catch (error) {
+    res.status(500).json({ error: 'Could not retrieve clients', details: error.message });
+  }
+};
+
+module.exports = { addClient, getAllClients };
+
