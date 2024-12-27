@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Daycare Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Dog Daycare Management System</h1>
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html">Profiles</a></li>
+          <li><a href="birthdayReminders.html">Birthdays</a></li>
+          <li><a href="vaccinationReminders.html">Vaccinations</a></li>
+          <li><a href="adminTasks.html">Tasks</a></li>
+          <li><a href="metrics.html">Metrics</a></li>
+          <li><a href="employees.html">Employees</a></li>
+          <li><a href="dogSchedule.html">Dog Schedule</a></li>
+          <li><a href="dogCompatibility.html">Dog Compatibility</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Add New Dog and Owner <button class="toggle-expand">Show</button></h2>
+      <div class="expandable-content" style="display: none;">
+        <form id="dogOwnerForm">
+          <h3>Owner Information</h3>
+          <label for="ownerFullName">Full Name:</label>
+          <input type="text" id="ownerFullName" required>
+
+          <label for="ownerAddress">Address:</label>
+          <input type="text" id="ownerAddress" required>
+
+          <label for="ownerPhonePrimary">Phone Number (Primary):</label>
+          <input type="tel" id="ownerPhonePrimary" required>
+
+          <label for="ownerPhoneWork">Phone Number (Work):</label>
+          <input type="tel" id="ownerPhoneWork">
+
+          <label for="ownerEmail">Email Address:</label>
+          <input type="email" id="ownerEmail" required>
+
+          <label for="emergencyContactName">Emergency Contact Name:</label>
+          <input type="text" id="emergencyContactName" required>
+
+          <label for="emergencyContactPhone">Emergency Contact Phone:</label>
+          <input type="tel" id="emergencyContactPhone" required>
+
+          <label for="emergencyContactRelationship">Emergency Contact Relationship:</label>
+          <input type="text" id="emergencyContactRelationship" required>
+
+          <h3>Veterinarian Information</h3>
+          <label for="vetName">Vet Name:</label>
+          <input type="text" id="vetName" required>
+
+          <label for="vetPhone">Vet Phone Number:</label>
+          <input type="tel" id="vetPhone" required>
+
+          <label for="preferredEmergencyVet">Preferred Emergency Vet:</label>
+          <input type="text" id="preferredEmergencyVet">
+
+          <h3>Dog Information</h3>
+          <label for="dogName">Dog Name:</label>
+          <input type="text" id="dogName" required>
+
+          <label for="breed">Breed:</label>
+          <input type="text" id="breed" required>
+
+          <label for="sex">Sex:</label>
+          <select id="sex" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <label for="neutered">Neutered/Spayed:</label>
+          <select id="neutered" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" required>
+
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" required>
+
+          <label for="color">Color/Markings:</label>
+          <input type="text" id="color">
+
+          <label for="weight">Weight:</label>
+          <input type="number" id="weight" required>
+
+          <label for="allergies">Allergies:</label>
+          <textarea id="allergies"></textarea>
+
+          <label for="medications">Medications:</label>
+          <textarea id="medications"></textarea>
+
+          <label for="medicalConditions">Known Medical Conditions:</label>
+          <textarea id="medicalConditions"></textarea>
+
+          <label for="vaccinationMultiple">Vaccination Records:</label>
+          <div id="vaccinationMultiple">
+            <label for="vaccinationDateMultiple">Select Date for Each:</label>
+            <div>
+              <label for="vaccinationDateAntirrabica">Antirrabica:</label>
+              <input type="date" id="vaccinationDateAntirrabica">
+            </div>
+            <div>
+              <label for="vaccinationDateGiardia">Giardia:</label>
+              <input type="date" id="vaccinationDateGiardia">
+            </div>
+            <div>
+              <label for="vaccinationDateBordetella">Bordetella:</label>
+              <input type="date" id="vaccinationDateBordetella">
+            </div>
+            <div>
+              <label for="vaccinationDateDesparacitacion">Desparacitacion:</label>
+              <input type="date" id="vaccinationDateDesparacitacion">
+            </div>
+            <div>
+              <label for="vaccinationDateAmpolleta">Ampolleta para pulgas:</label>
+              <input type="date" id="vaccinationDateAmpolleta">
+            </div>
+          </div>
+
+          <label for="dietaryRequirements">Dietary Requirements:</label>
+          <textarea id="dietaryRequirements"></textarea>
+
+          <label for="behaviorTraits">Behavior Traits:</label>
+          <textarea id="behaviorTraits"></textarea>
+
+          <label for="servicesNeeded">Services Needed:</label>
+          <textarea id="servicesNeeded"></textarea>
+
+          <label for="specialInstructions">Special Instructions:</label>
+          <textarea id="specialInstructions"></textarea>
+
+          <label for="additionalNotes">Additional Notes:</label>
+          <textarea id="additionalNotes"></textarea>
+
+          <label for="petHistory">Pet History:</label>
+          <textarea id="petHistory"></textarea>
+
+          <label for="permissions">Permissions:</label>
+          <textarea id="permissions"></textarea>
+
+          <h3>Dog Compatibility</h3>
+
+          <label for="personality">Personality:</label>
+          <select id="personality" required>
+            <option value="" disabled selected>Select personality</option>
+            <option value="1">Calm</option>
+            <option value="2">Playful</option>
+            <option value="3">Curious</option>
+            <option value="4">Shy</option>
+            <option value="5">Confident</option>
+            <option value="6">Reserved</option>
+            <option value="7">Aggressive</option>
+          </select>
+
+          <label for="behavior">Behavior:</label>
+          <select id="behavior" required>
+            <option value="" disabled selected>Select behavior</option>
+            <option value="1">Friendly</option>
+            <option value="2">Neutral</option>
+            <option value="3">Shy</option>
+            <option value="4">Playful</option>
+            <option value="5">Submissive</option>
+            <option value="6">Dominant</option>
+            <option value="7">Aggressive</option>
+          </select>
+
+          <label for="energyLevel">Energy Level:</label>
+          <select id="energyLevel" required>
+            <option value="" disabled selected>Select energy level</option>
+            <option value="1">Low</option>
+            <option value="2">Moderate</option>
+            <option value="3">High</option>
+          </select>
+
+          <label for="compatibility">Compatibility:</label>
+          <select id="compatibility" required>
+            <option value="" disabled selected>Select compatibility</option>
+            <option value="1">Similar size</option>
+            <option value="2">Calm personalities</option>
+            <option value="3">Playful personalities</option>
+            <option value="4">High-energy dogs</option>
+            <option value="5">Dogs of the same breed</option>
+            <option value="6">Age-appropriate matches</option>
+            <option value="7">Dogs with prior training</option>
+          </select>
+
+          <label for="activityPreferences">Activity Preferences:</label>
+          <select id="activityPreferences" required>
+            <option value="" disabled selected>Select activity preference</option>
+            <option value="1">Relaxing</option>
+            <option value="2">Walking</option>
+            <option value="3">Playing fetch</option>
+            <option value="4">Swimming</option>
+            <option value="5">Running</option>
+            <option value="6">Exploring</option>
+            <option value="7">Training sessions</option>
+          </select>
+
+          <label for="socializationLevel">Socialization Level:</label>
+          <select id="socializationLevel" required>
+            <option value="" disabled selected>Select socialization level</option>
+            <option value="1">Highly social</option>
+            <option value="2">Moderately social</option>
+            <option value="3">Needs time to adjust</option>
+            <option value="4">Not social</option>
+          </select>
+
+          <label for="trainingLevel">Training Level:</label>
+          <select id="trainingLevel" required>
+            <option value="" disabled selected>Select training level</option>
+            <option value="1">Fully trained</option>
+            <option value="2">Advanced training</option>
+            <option value="3">Basic commands</option>
+            <option value="4">Untrained</option>
+            <option value="5">Housebroken</option>
+          </select>
+
+          <button type="submit">Add Dog</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>Add New Service <button class="toggle-expand">Show</button></h2>
+      <div class="expandable-content" style="display: none;">
+        <form id="serviceForm">
+          <label for="dogSelect">Select Dog:</label>
+          <select id="dogSelect" required>
+            <option value="" disabled selected>Select a dog</option>
+          </select>
+
+          <label for="serviceType">Service Type:</label>
+          <select id="serviceType" required>
+            <option value="daycare">Daycare</option>
+            <option value="hotel">Hotel</option>
+            <option value="training">Training</option>
+            <option value="grooming">Grooming</option>
+          </select>
+
+          <label for="serviceDate">Date of Service:</label>
+          <input type="date" id="serviceDate" required>
+
+          <div id="hotelServiceFields" style="display: none;">
+            <!-- Dynamic fields will be added here -->
+          </div>
+
+          <p id="passInfo"></p>
+
+          <label for="price">Price:</label>
+          <input type="number" id="price" required>
+
+          <button type="submit">Add Service</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>Add Membership Passes <button class="toggle-expand">Show</button></h2>
+      <div class="expandable-content" style="display: none;">
+        <form id="membershipForm">
+          <label for="membershipDogSelect">Select Dog:</label>
+          <select id="membershipDogSelect" required>
+            <option value="" disabled selected>Select a dog</option>
+          </select>
+
+          <label for="membershipServiceType">Service Type:</label>
+          <select id="membershipServiceType" required>
+            <option value="daycare">Daycare</option>
+            <option value="hotel">Hotel</option>
+            <option value="training">Training</option>
+            <option value="grooming">Grooming</option>
+          </select>
+
+          <label for="numberOfPasses">Number of Passes:</label>
+          <input type="number" id="numberOfPasses" required>
+
+          <label for="membershipPrice">Price:</label>
+          <input type="number" id="membershipPrice" required>
+
+          <label for="membershipDate">Date:</label>
+          <input type="date" id="membershipDate" required>
+
+          <label for="membershipExpiryDate">Expiration Date:</label>
+          <input type="date" id="membershipExpiryDate" required>
+
+          <button type="submit">Add Passes</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>Record Payment <button class="toggle-expand">Show</button></h2>
+      <div class="expandable-content" style="display: none;">
+        <form id="paymentForm">
+          <label for="paymentDogSelect">Select Dog:</label>
+          <select id="paymentDogSelect" required>
+            <option value="" disabled selected>Select a dog</option>
+          </select>
+
+          <label for="paymentAmount">Payment Amount:</label>
+          <input type="number" id="paymentAmount" required>
+
+          <label for="paymentDate">Payment Date:</label>
+          <input type="date" id="paymentDate" required>
+
+          <button type="submit">Record Payment</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dog Profiles</h2>
+      <div id="dogProfiles"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
